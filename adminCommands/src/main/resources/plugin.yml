@@ -1,0 +1,47 @@
+name: ComandosAdmin
+version: '${project.version}'
+main: me.mariakawaii.comandosadmin.ComandosAdmin
+api-version: 1.18
+authors: [ Maria ]
+description: Varios comandos de administracion
+commands:
+  creativo:
+    description: Cambia tu modo de juego a creativo
+    usage: /<command>
+    aliases:
+      - c
+  espectador:
+    description: Cambia tu modo de juego a espectador
+    usage: /<command>
+    aliases:
+      - e
+  supervivencia:
+    description: Cambia tu modo de juego a supervivencia
+    usage: /<command>
+    aliases:
+      - s
+  aventura:
+    description: Cambia tu modo de juego a aventura
+    usage: /<command>
+    aliases:
+      - a
+  vanish:
+    description: Te vuelve invisible para todos los jugadores
+    usage: /<command>
+    aliases:
+      - v
+  vuelo:
+    description: Activa el vuelo sin importar el modo en el que estés
+    usage: /<command>
+    aliases:
+      - vl
+  velocidad:
+    description: Cambia tanto la velocidad al caminar como al volar
+    usage: /<command>
+    aliases:
+      - vel
+  gui:
+    description: Abre un panel con comandos de administración
+    usage: /<command>
+    aliases:
+      - admin

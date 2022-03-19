@@ -1,0 +1,12 @@
+me\mariakawaii\comandosadmin\listeners\comandoEspectador.class
+me\mariakawaii\comandosadmin\listeners\comandoCreativo.class
+me\mariakawaii\comandosadmin\listeners\comandoSupervivencia.class
+me\mariakawaii\comandosadmin\listeners\comandoSpeed.class
+me\mariakawaii\comandosadmin\events\onClickEvent$1.class
+me\mariakawaii\comandosadmin\events\onClickEvent.class
+me\mariakawaii\comandosadmin\listeners\comandoVanish.class
+me\mariakawaii\comandosadmin\listeners\comandoFly.class
+me\mariakawaii\comandosadmin\ComandosAdmin.class
+me\mariakawaii\comandosadmin\listeners\comandoAdminGUI.class
+me\mariakawaii\comandosadmin\listeners\comandoAventura.class
+me\mariakawaii\comandosadmin\classes\customInventory.class
