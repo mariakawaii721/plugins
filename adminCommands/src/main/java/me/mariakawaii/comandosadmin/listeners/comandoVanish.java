@@ -14,7 +14,7 @@ public class comandoVanish implements CommandExecutor {
     static ComandosAdmin plugin;
 
     public comandoVanish(ComandosAdmin plugin) {
-        this.plugin = plugin;
+        comandoVanish.plugin = plugin;
     }
 
     @Override

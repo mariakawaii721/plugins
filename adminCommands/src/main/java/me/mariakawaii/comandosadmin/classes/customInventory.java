@@ -12,14 +12,14 @@ import java.util.List;
 
 public class customInventory implements InventoryHolder {
 
-    private Inventory inv;
+    private final Inventory inv;
 
     public customInventory(){
         inv = Bukkit.createInventory(this,54, ChatColor.DARK_RED + "Panel admin");
-        init();
+        admin();
     }
 
-    private void init(){
+    private void admin(){
         ItemStack item;
         for (int i = 0; i < 11; i++) {
             item = customItem("",Material.BLACK_STAINED_GLASS_PANE, Collections.singletonList(""));

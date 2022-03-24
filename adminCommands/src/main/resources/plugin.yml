@@ -45,3 +45,8 @@ commands:
     usage: /<command>
     aliases:
       - admin
+  bangui:
+    description: GUI para banear a jugadores
+    usage: /<command>
+    aliases:
+      - b

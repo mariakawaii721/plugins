@@ -9,17 +9,35 @@ import org.bukkit.entity.Player;
 public class comandoSpeed implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        int velocidad = 0;
         if(sender instanceof Player){
             Player p = (Player) sender;
             if(args.length == 0){
                 p.sendMessage(ChatColor.YELLOW + "Pon un número del 1 al 10");
             }
+            int velocidad = 0;
                 try {
                     velocidad = Integer.parseInt(args[0]);
                 }catch (NumberFormatException e){
                     p.sendMessage(ChatColor.YELLOW + "Pon un número del 1 al 10");
                     return false;
+                }
+            float velocidadReal = 0.09f * velocidad + 0.06f;
+                if(p.isFlying()){
+                    if(p.getFlySpeed() < 1f){
+                        p.setFlySpeed(velocidadReal);
+                        p.sendMessage("vel " + p.getFlySpeed());
+                    }else{
+                        p.setFlySpeed(velocidadReal);
+                        p.sendMessage("vel " + p.getFlySpeed());
+                    }
+                }else{
+                    if(p.getWalkSpeed() < 1f){
+                        p.setWalkSpeed(velocidadReal);
+                        p.sendMessage("vel " + p.getWalkSpeed());
+                    }else{
+                        p.setWalkSpeed(velocidadReal);
+                        p.sendMessage("vel " + p.getWalkSpeed());
+                    }
                 }
                 if(velocidad < 1 || velocidad > 10){
                     p.sendMessage(ChatColor.YELLOW + "Pon un número del 1 al 10");
@@ -28,20 +46,4 @@ public class comandoSpeed implements CommandExecutor {
             }
         return true;
     }
-
-    /*private float conseguirVelocidad(Player p){
-        return p.getFlySpeed();
-
-        if(p.isFlying()){
-                    p.setFlySpeed((float) velocidad / 10);
-                    if(conseguirVelocidad(p) > 1f){
-                        p.setFlySpeed(0.2f);
-                    }
-                }else{
-                    p.setWalkSpeed((float) velocidad / 10);
-                    if(conseguirVelocidad(p) > 1f){
-                        p.setWalkSpeed(0.2f);
-                    }
-                }
-    }*/
 }
