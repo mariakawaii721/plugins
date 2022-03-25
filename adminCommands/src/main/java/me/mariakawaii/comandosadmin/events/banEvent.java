@@ -1,7 +1,5 @@
 package me.mariakawaii.comandosadmin.events;
 
-import me.mariakawaii.comandosadmin.classes.banGUI;
-import me.mariakawaii.comandosadmin.classes.customInventory;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -15,11 +13,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class banEvent implements Listener {
 
-    banGUI plugin;
-
-    public banEvent(banGUI plugin) {
-        this.plugin = plugin;
-    }
 
     @EventHandler
     public void onClickMenu(InventoryClickEvent e){
@@ -55,6 +48,5 @@ public class banEvent implements Listener {
         inventarioBAN.setItem(8,volver);
         return inventarioBAN;
     }
-
 
 }

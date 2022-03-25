@@ -7,7 +7,6 @@ me\mariakawaii\comandosadmin\listeners\comandoSpeed.class
 me\mariakawaii\comandosadmin\events\banEvent.class
 me\mariakawaii\comandosadmin\listeners\comandoVanish.class
 me\mariakawaii\comandosadmin\events\onClickEventGUI$1.class
-me\mariakawaii\comandosadmin\classes\banGUI.class
 me\mariakawaii\comandosadmin\listeners\comandoFly.class
 me\mariakawaii\comandosadmin\ComandosAdmin.class
 me\mariakawaii\comandosadmin\events\onClickEventGUI.class

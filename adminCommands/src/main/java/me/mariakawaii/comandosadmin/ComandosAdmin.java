@@ -2,7 +2,6 @@ package me.mariakawaii.comandosadmin;
 
 import me.mariakawaii.comandosadmin.events.onClickEventGUI;
 import me.mariakawaii.comandosadmin.listeners.*;
-import me.mariakawaii.comandosadmin.classes.banGUI;
 import me.mariakawaii.comandosadmin.events.banEvent;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -22,7 +21,7 @@ public final class ComandosAdmin extends JavaPlugin {
 
         //EVENTOS
         getServer().getPluginManager().registerEvents(new onClickEventGUI(),this);
-        getServer().getPluginManager().registerEvents(new banEvent(new banGUI()),this);
+        getServer().getPluginManager().registerEvents(new banEvent(),this);
         //COMANDOS
         getCommand("creativo").setExecutor(new comandoCreativo());
         getCommand("espectador").setExecutor(new comandoEspectador());
@@ -32,7 +31,7 @@ public final class ComandosAdmin extends JavaPlugin {
         getCommand("vuelo").setExecutor(new comandoFly());
         getCommand("velocidad").setExecutor(new comandoSpeed());
         getCommand("gui").setExecutor(new comandoAdminGUI());
-        getCommand("bangui").setExecutor(new comandoBanGUI(new banGUI()));
+        getCommand("bangui").setExecutor(new comandoBanGUI());
 
     }
 
