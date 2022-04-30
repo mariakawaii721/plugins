@@ -46,7 +46,30 @@ commands:
     aliases:
       - admin
   bangui:
-    description: GUI para banear a jugadores
+    description: GUI para banear a jugadores (W.I.P)
     usage: /<command>
     aliases:
       - b
+  teleport:
+    description: Teletransportar jugadores
+    usage: /<command>
+    aliases:
+      - tp
+  tphere:
+    description: Teletransportar jugadores a tu posición
+    usage: /<command>
+  sol:
+    description: Haces que salga el Sol
+    usage: /<command>
+  lluvia:
+    description: Haces que llueva
+    usage: /<command>
+  trueno:
+    description: Haces que truene
+    usage: /<command>
+  dia:
+    description: Haces de día
+    usage: /<command>
+  noche:
+    description: Haces de noche
+    usage: /<command>
