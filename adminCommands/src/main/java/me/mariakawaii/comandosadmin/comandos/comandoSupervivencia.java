@@ -12,12 +12,17 @@ public class comandoSupervivencia implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(sender instanceof Player){
             Player p = (Player) sender;
-            if(p.getGameMode() == GameMode.SURVIVAL){
-                p.sendMessage(ChatColor.RED + "Ya estás en supervivencua");
+            if(p.hasPermission("adminCommands.supervivencia")){
+                if(p.getGameMode() == GameMode.SURVIVAL){
+                    p.sendMessage(ChatColor.RED + "Ya estás en supervivencua");
+                }else{
+                    p.setGameMode(GameMode.SURVIVAL);
+                    p.sendMessage(ChatColor.GREEN + "Modo de juego cambiado a " + ChatColor.WHITE + "Supervivencia");
+                }
             }else{
-                p.setGameMode(GameMode.SURVIVAL);
-                p.sendMessage(ChatColor.GREEN + "Modo de juego cambiado a " + ChatColor.WHITE + "Supervivencia");
+                p.sendMessage(ChatColor.RED + "Tu nombre no es Bear Grylls");
             }
+
         }
         return true;
     }

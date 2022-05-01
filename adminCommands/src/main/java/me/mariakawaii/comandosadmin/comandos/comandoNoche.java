@@ -1,5 +1,6 @@
 package me.mariakawaii.comandosadmin.comandos;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -10,7 +11,11 @@ public class comandoNoche implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(sender instanceof Player){
             Player p = (Player) sender;
-            p.getLocation().getWorld().setTime(13000);
+            if(p.hasPermission("adminCommands.noche")){
+                p.getLocation().getWorld().setTime(13000);
+            }else {
+                p.sendMessage(ChatColor.RED + "¿Le tienes miedo al sol o qué?");
+            }
         }
         return true;
     }

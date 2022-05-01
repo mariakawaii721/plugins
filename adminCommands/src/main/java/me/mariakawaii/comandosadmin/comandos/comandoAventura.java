@@ -12,12 +12,17 @@ public class comandoAventura implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(sender instanceof Player){
             Player p = (Player) sender;
-            if(p.getGameMode() == GameMode.ADVENTURE){
-                p.sendMessage(ChatColor.RED + "Ya estás en modo aventura");
+            if(p.hasPermission("adminCommands.aventura")){
+                if(p.getGameMode() == GameMode.ADVENTURE){
+                    p.sendMessage(ChatColor.RED + "Ya estás en modo aventura");
+                }else{
+                    p.setGameMode(GameMode.ADVENTURE);
+                    p.sendMessage(ChatColor.GREEN + "Modo de juego cambiado a " + ChatColor.WHITE + "Aventura");
+                }
             }else{
-                p.setGameMode(GameMode.ADVENTURE);
-                p.sendMessage(ChatColor.GREEN + "Modo de juego cambiado a " + ChatColor.WHITE + "Aventura");
+                p.sendMessage(ChatColor.RED + "y tho");
             }
+
         }
         return true;
     }

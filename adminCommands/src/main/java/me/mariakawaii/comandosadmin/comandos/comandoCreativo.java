@@ -12,12 +12,17 @@ public class comandoCreativo implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(sender instanceof Player){
             Player p = (Player) sender;
-            if(p.getGameMode() == GameMode.CREATIVE){
-                p.sendMessage(ChatColor.RED + "Ya estás en modo creativo");
+            if(p.hasPermission("adminCommands.creativo")){
+                if(p.getGameMode() == GameMode.CREATIVE){
+                    p.sendMessage(ChatColor.RED + "Ya estás en modo creativo");
+                }else{
+                    p.setGameMode(GameMode.CREATIVE);
+                    p.sendMessage(ChatColor.GREEN + "Modo de juego cambiado a " + ChatColor.WHITE + "Creativo");
+                }
             }else{
-                p.setGameMode(GameMode.CREATIVE);
-                p.sendMessage(ChatColor.GREEN + "Modo de juego cambiado a " + ChatColor.WHITE + "Creativo");
+                p.sendMessage(ChatColor.RED + "¿Cuáles son tus intenciones eh?");
             }
+
         }
         return true;
     }

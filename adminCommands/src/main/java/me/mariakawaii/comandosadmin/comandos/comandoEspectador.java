@@ -12,12 +12,17 @@ public class comandoEspectador implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(sender instanceof Player){
             Player p = (Player) sender;
-            if(p.getGameMode() == GameMode.SPECTATOR){
-                p.sendMessage(ChatColor.RED + "Ya estás en modo espectador");
+            if(p.hasPermission("adminCommands.espectador")){
+                if(p.getGameMode() == GameMode.SPECTATOR){
+                    p.sendMessage(ChatColor.RED + "Ya estás en modo espectador");
+                }else{
+                    p.setGameMode(GameMode.SPECTATOR);
+                    p.sendMessage(ChatColor.GREEN + "Modo de juego cambiado a " + ChatColor.WHITE + "Espectador");
+                }
             }else{
-                p.setGameMode(GameMode.SPECTATOR);
-                p.sendMessage(ChatColor.GREEN + "Modo de juego cambiado a " + ChatColor.WHITE + "Espectador");
+                p.sendMessage(ChatColor.RED + "Un poco Cásper sí que eres");
             }
+
         }
         return true;
     }

@@ -12,14 +12,17 @@ public class comandoTPHere implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(sender instanceof Player){
             Player p = (Player) sender;
-
-            if(args.length == 0){
-                p.sendMessage(ChatColor.RED + "Añade el nick de un jugador para poder usar el comando");
-            }else{
-                Player jugadorAteletransportar = Bukkit.getPlayer(args[0]);
-                jugadorAteletransportar.teleport(p.getLocation());
-
+            if(p.hasPermission("adminCommands.tphere")){
+                if(args.length == 0){
+                    p.sendMessage(ChatColor.RED + "Añade el nick de un jugador para poder usar el comando");
+                }else{
+                    Player jugadorAteletransportar = Bukkit.getPlayer(args[0]);
+                    jugadorAteletransportar.teleport(p.getLocation());
+                }
+            }else {
+                p.sendMessage(ChatColor.RED + "You are not a wizzard Harry");
             }
+
         }
 
 

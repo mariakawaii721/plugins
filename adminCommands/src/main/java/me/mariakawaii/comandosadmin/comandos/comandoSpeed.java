@@ -11,17 +11,18 @@ public class comandoSpeed implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(sender instanceof Player){
             Player p = (Player) sender;
+            if(p.hasPermission("adminCommands.speed")){
                 if(args.length == 0){
                     p.sendMessage(ChatColor.AQUA + "Pon un número entre 1 y 10");
                 }
-            int velocidad = 0;
+                int velocidad = 0;
                 try {
                     velocidad = Integer.parseInt(args[0]);
                 }catch (NumberFormatException e){
                     p.sendMessage(ChatColor.AQUA + "Pon un número entre 1 y 10");
                     return true;
                 }
-            float velocidadReal = 0.09f * velocidad + 0.020f;
+                float velocidadReal = 0.09f * velocidad + 0.020f;
                 if(p.isFlying()){
                     if(p.getFlySpeed() < 1f){
                         p.setFlySpeed(velocidadReal);
@@ -37,7 +38,10 @@ public class comandoSpeed implements CommandExecutor {
                 }
 
                 p.sendMessage(ChatColor.AQUA + "Tu velocidad ahora es " + velocidad);
+            }else{
+                p.sendMessage(ChatColor.RED + "Francesco Virgolini pero sin ruedas");
             }
+        }
         return true;
     }
 }

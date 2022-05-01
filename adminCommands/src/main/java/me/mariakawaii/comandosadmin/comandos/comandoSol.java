@@ -1,6 +1,7 @@
 package me.mariakawaii.comandosadmin.comandos;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -15,8 +16,14 @@ public class comandoSol implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         int tiempo = rnd.nextInt(300,900);
         if(sender instanceof Player){
-            World mundo = Bukkit.getWorlds().get(0);
-            mundo.setClearWeatherDuration(tiempo);
+            Player p = (Player) sender;
+            if(p.hasPermission("adminComamnds.sol")){
+                World mundo = Bukkit.getWorlds().get(0);
+                mundo.setClearWeatherDuration(tiempo);
+            }else {
+                p.sendMessage(ChatColor.RED + "Gremlin...");
+            }
+
         }
         return true;
     }

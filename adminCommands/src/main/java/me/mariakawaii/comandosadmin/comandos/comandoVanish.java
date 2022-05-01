@@ -21,7 +21,12 @@ public class comandoVanish implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             Player p = (Player) sender;
-            vanish(p);
+            if(p.hasPermission("adminCommands.vanish")){
+                vanish(p);
+            }else {
+                p.sendMessage(ChatColor.RED + "Whoosh, no eres invisible =D");
+            }
+
         }
         return true;
     }

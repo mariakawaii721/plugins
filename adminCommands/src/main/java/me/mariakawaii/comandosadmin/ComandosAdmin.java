@@ -1,10 +1,10 @@
 package me.mariakawaii.comandosadmin;
 
+import me.mariakawaii.comandosadmin.comandos.*;
+import me.mariakawaii.comandosadmin.events.banEvent;
 import me.mariakawaii.comandosadmin.events.chatFormatEvent;
 import me.mariakawaii.comandosadmin.events.onClickEventGUI;
 import me.mariakawaii.comandosadmin.events.onJoinLeaveEvent;
-import me.mariakawaii.comandosadmin.comandos.*;
-import me.mariakawaii.comandosadmin.events.banEvent;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 

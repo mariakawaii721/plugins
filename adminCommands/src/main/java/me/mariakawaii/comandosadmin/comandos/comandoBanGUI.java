@@ -1,6 +1,7 @@
 package me.mariakawaii.comandosadmin.comandos;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,7 +19,12 @@ public class comandoBanGUI implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(sender instanceof Player){
             Player p = (Player) sender;
+            if(p.hasPermission("adminCommands.bangui")){
                 abrirGUI(p);
+            }else{
+                p.sendMessage(ChatColor.RED + "Va a ser que no amigo =D");
+            }
+
         }
         return true;
     }
